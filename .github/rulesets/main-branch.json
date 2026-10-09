@@ -16,12 +16,6 @@
       "type": "non_fast_forward"
     },
     {
-      "type": "creation"
-    },
-    {
-      "type": "update"
-    },
-    {
       "type": "required_linear_history"
     },
     {
