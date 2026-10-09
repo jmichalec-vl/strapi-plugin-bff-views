@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-bff-views",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "description": "Configurable BFF aggregate endpoints for Strapi v5: one request returns a fully populated, transformed page payload backed by parallel decomposed queries.",
   "license": "MIT",
   "exports": {
