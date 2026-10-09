@@ -1,6 +1,11 @@
 # Majors are deliberate, scheduled upgrades (eslint flat config, vitest,
 # the React/Strapi admin pairing in the e2e app); the bot only proposes
 # minors and patches. Action majors stay enabled: they are small and CI-gated.
+#
+# increase-if-necessary keeps package.json ranges that already allow the new
+# version: the default strategy rewrote the `@strapi/strapi` peer range to the
+# bumped version, which would have excluded older Strapi 5 hosts. The e2e app
+# follows the latest Strapi 5 minor so CI runs on what new adopters install.
 version: 2
 updates:
   - package-ecosystem: npm
@@ -8,6 +13,7 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    versioning-strategy: increase-if-necessary
     groups:
       dev-dependencies:
         dependency-type: development
@@ -19,6 +25,7 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    versioning-strategy: increase-if-necessary
     groups:
       e2e-app:
         patterns: ['*']
