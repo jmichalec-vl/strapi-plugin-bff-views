@@ -1,17 +1,32 @@
+# Majors are deliberate, scheduled upgrades (eslint flat config, vitest,
+# the React/Strapi admin pairing in the e2e app); the bot only proposes
+# minors and patches. Action majors stay enabled: they are small and CI-gated.
 version: 2
 updates:
   - package-ecosystem: npm
     directory: /
     schedule:
       interval: weekly
+    open-pull-requests-limit: 5
     groups:
       dev-dependencies:
         dependency-type: development
+    ignore:
+      - dependency-name: '*'
+        update-types: ['version-update:semver-major']
   - package-ecosystem: npm
     directory: /__tests__/e2e/strapi-app
     schedule:
       interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      e2e-app:
+        patterns: ['*']
+    ignore:
+      - dependency-name: '*'
+        update-types: ['version-update:semver-major']
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: weekly
+    open-pull-requests-limit: 5
