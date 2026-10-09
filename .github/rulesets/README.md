@@ -26,12 +26,15 @@ To update an existing ruleset, find its id with
 ## Bypass actors
 
 - `RepositoryRole 5` (Admin): the maintainer can merge their own pull requests
-  and recover from mistakes. The publish workflow pushes its version commit
-  and tag to `main` with the maintainer's `GH_PAT` secret for the same
-  reason: on a user-owned repository GitHub does not accept the GitHub
-  Actions app as a bypass actor, so the built-in `GITHUB_TOKEN` cannot push
-  to a protected branch. Use a fine-grained token limited to this repository
-  with `Contents: read and write`, and rotate it on a schedule.
+  and recover from mistakes. The release workflow (`release.yml`) opens the
+  Release PR and creates the `v*` tag and the GitHub Release with the
+  maintainer's `GH_PAT` secret for the same reason: on a user-owned
+  repository GitHub does not accept the GitHub Actions app as a bypass actor,
+  so the built-in `GITHUB_TOKEN` cannot write to a protected ref, and a PR it
+  opens would not trigger CI. Use a fine-grained token limited to this
+  repository with `Contents`, `Pull requests` and `Issues` set to read and
+  write (release-please labels the Release PR through the issues endpoint),
+  and rotate it on a schedule.
 
 ## Also enable in Settings > Code security
 

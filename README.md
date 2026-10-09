@@ -423,6 +423,8 @@ On a cache hit `timings` is omitted: the stored plan still describes the respons
 
 Public surface: the plugin config schema, the endpoint contract, the response envelope, the view manifest, and the `FieldCtx`/`HookCtx` shapes passed to transformers and hooks. Semver applies to these; see [CHANGELOG.md](./CHANGELOG.md) for the history, including the breaking hook-signature change in 1.0.0.
 
+Versions are derived from merged pull request titles by [release-please](https://github.com/googleapis/release-please): `feat:` bumps the minor, `fix:` and `perf:` bump the patch, a `!` after the type (or a `BREAKING CHANGE:` footer) bumps the major. A Release PR accumulates the pending changes; merging it tags the release, creates the GitHub Release and publishes to npm with provenance.
+
 ## Development
 
 ```bash
@@ -453,6 +455,7 @@ Issues and PRs welcome. Ground rules:
 
 - Bug reports: include your view config, the relevant content-type schema, and `?_explain=true` output where applicable.
 - New features ship with unit tests; anything touching the request pipeline also ships with an e2e test.
+- Pull request titles follow [Conventional Commits](https://www.conventionalcommits.org/) (`feat:`, `fix:`, `perf:`, `docs:`, `chore:`, ...). The title becomes the squash commit subject and the changelog line, so write it for plugin users, not reviewers. CI checks the title, and a `commit-msg` hook checks local commits.
 - The planner invariant (no whole-document deep populate, ever) is non-negotiable - it is the reason this plugin exists.
 - **The schema-generation contract is versioned.** External schema generators depend on more than the manifest's shape: the response envelope (`{ data, meta: { view } }` / `{ data: null, error }`), the transformer walk stopping at relation boundaries, enrich adding unknown keys, and assemble replacing the data shape are all load-bearing. Changing any of these - or the manifest shape non-additively - requires bumping `MANIFEST_VERSION` (see the contract note on `describeViews` in `view-registry.ts`) so generators gate instead of silently emitting wrong schemas. Additive manifest fields keep the version.
 
