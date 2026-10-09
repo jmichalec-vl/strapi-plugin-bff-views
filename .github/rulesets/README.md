@@ -14,7 +14,13 @@ To update an existing ruleset, find its id with
 ## What they enforce
 
 - `main-branch`: no deletion or force-push, linear history, pull requests with
-  one approving review, all four CI jobs green on an up-to-date branch.
+  one approving review from a code owner (`.github/CODEOWNERS`: the
+  maintainer), re-approval after every push, all four CI jobs green on an
+  up-to-date branch. Collaborators with the Write role can open and review
+  pull requests but cannot merge without the maintainer's approval.
+  It deliberately has no `creation`/`update` (restrict updates) rules: those
+  block every write to the ref including pull-request merges, and the web
+  merge path does not apply the Admin bypass to them.
 - `release-tags`: `v*` tags cannot be created, moved or deleted by hand.
 
 ## Bypass actors
