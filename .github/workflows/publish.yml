@@ -24,7 +24,7 @@ jobs:
     steps:
       # A fine-grained PAT (Contents: read/write on this repo): the version
       # commit and tag go to the protected main through the Admin bypass
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: main
           token: ${{ secrets.GH_PAT }}
