@@ -26,6 +26,14 @@ jobs:
       - run: npm run lint
       - run: npm run format:check
 
+      # Squash merges use the PR title as the commit subject, which
+      # release-please parses for the version bump and the changelog
+      - name: PR title follows Conventional Commits
+        if: github.event_name == 'pull_request'
+        run: echo "$PR_TITLE" | npx --no -- commitlint
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+
   unit-tests:
     name: Unit Tests
     runs-on: ubuntu-latest

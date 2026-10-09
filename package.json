@@ -34,6 +34,8 @@
     "@strapi/strapi": "^5.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^21.2.3",
+    "@commitlint/config-conventional": "^21.2.3",
     "@strapi/sdk-plugin": "^6.0.1",
     "@strapi/strapi": "^5.0.0",
     "@strapi/types": "^5.0.0",
