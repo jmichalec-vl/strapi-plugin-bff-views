@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_navigation_dropdown_sections",
+  "info": { "displayName": "Dropdown Section" },
+  "attributes": {
+    "sectionTitle": { "type": "string", "required": true },
+    "sectionLink": { "type": "string" },
+    "image": {
+      "type": "media",
+      "allowedTypes": ["images"],
+      "multiple": false
+    },
+    "links": {
+      "type": "component",
+      "component": "navigation.link",
+      "repeatable": true
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "headers",
+  "info": {
+    "singularName": "header",
+    "pluralName": "headers",
+    "displayName": "Header"
+  },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "links": {
+      "type": "component",
+      "component": "navigation.link",
+      "repeatable": true
+    },
+    "dropdowns": {
+      "type": "dynamiczone",
+      "components": ["navigation.dropdown"]
+    }
+  }
+}

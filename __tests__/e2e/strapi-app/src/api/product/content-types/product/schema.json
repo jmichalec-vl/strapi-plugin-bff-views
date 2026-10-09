@@ -1,0 +1,99 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 2
+    },
+    "sku": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "price": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "compareAtPrice": {
+      "type": "float"
+    },
+    "quantity": {
+      "type": "integer",
+      "required": true,
+      "default": 0,
+      "min": 0
+    },
+    "isActive": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "totalViews": {
+      "type": "biginteger"
+    },
+    "metadata": {
+      "type": "json"
+    },
+    "images": {
+      "type": "media",
+      "allowedTypes": ["images"],
+      "multiple": true
+    },
+    "thumbnail": {
+      "type": "media",
+      "allowedTypes": ["images"],
+      "multiple": false
+    },
+    "fulfillmentOptions": {
+      "type": "dynamiczone",
+      "components": ["catalog.one-time-option", "catalog.subscription-option"],
+      "required": true,
+      "min": 1
+    },
+    "productMetadata": {
+      "type": "dynamiczone",
+      "components": ["catalog.marketing-metadata", "catalog.operations-metadata"]
+    },
+    "tags": {
+      "type": "component",
+      "component": "shared.tag",
+      "repeatable": true
+    },
+    "variants": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-variant.product-variant",
+      "mappedBy": "product"
+    },
+    "relatedProduct": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product.product"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "products"
+    },
+    "internalNotes": {
+      "type": "string",
+      "private": true
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "Article"
+  },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "slug": { "type": "string", "required": true, "unique": true },
+    "content": { "type": "richtext", "required": true },
+    "excerpt": { "type": "text" },
+    "publishDate": { "type": "date" },
+    "image": {
+      "type": "media",
+      "allowedTypes": ["images"],
+      "multiple": false,
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["draft", "in_review", "published", "archived"],
+      "required": true,
+      "default": "draft"
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "required": false
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "articles"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "articles"
+    }
+  }
+}

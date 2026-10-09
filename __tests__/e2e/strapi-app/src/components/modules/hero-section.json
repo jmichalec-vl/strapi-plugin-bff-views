@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_modules_hero_sections",
+  "info": {
+    "displayName": "Hero Section"
+  },
+  "attributes": {
+    "title": {
+      "type": "richtext",
+      "required": true
+    },
+    "subtitle": {
+      "type": "richtext"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "image": {
+      "type": "media",
+      "allowedTypes": ["images"],
+      "multiple": false
+    },
+    "mobileImage": {
+      "type": "media",
+      "allowedTypes": ["images"],
+      "multiple": false
+    },
+    "align": {
+      "type": "enumeration",
+      "enum": ["left", "center"],
+      "required": true,
+      "default": "left"
+    },
+    "textColor": {
+      "type": "string",
+      "required": true,
+      "default": "#FFFFFF"
+    },
+    "buttons": {
+      "type": "component",
+      "component": "modules.button",
+      "repeatable": true
+    }
+  }
+}

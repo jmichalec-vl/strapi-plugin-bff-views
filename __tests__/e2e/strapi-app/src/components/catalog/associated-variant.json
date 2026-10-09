@@ -1,0 +1,11 @@
+{
+  "collectionName": "components_catalog_associated_variants",
+  "info": { "displayName": "Associated Variant" },
+  "attributes": {
+    "variant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product-variant.product-variant"
+    }
+  }
+}

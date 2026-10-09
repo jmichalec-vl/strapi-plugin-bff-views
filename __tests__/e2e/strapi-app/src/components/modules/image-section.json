@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_modules_image_sections",
+  "info": { "displayName": "Image Section" },
+  "attributes": {
+    "image": {
+      "type": "media",
+      "allowedTypes": ["images"],
+      "multiple": false,
+      "required": true
+    },
+    "desktopImage": {
+      "type": "media",
+      "allowedTypes": ["images"],
+      "multiple": false
+    },
+    "width": {
+      "type": "enumeration",
+      "enum": ["standard", "full_width"],
+      "required": true,
+      "default": "standard"
+    },
+    "removePadding": { "type": "boolean", "required": true, "default": false }
+  }
+}

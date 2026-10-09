@@ -1,0 +1,8 @@
+{
+  "collectionName": "components_shared_tags",
+  "info": { "displayName": "Tag" },
+  "attributes": {
+    "name": { "type": "string", "required": true },
+    "color": { "type": "string", "default": "#000000" }
+  }
+}

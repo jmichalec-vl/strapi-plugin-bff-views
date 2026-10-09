@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_shared_seos",
+  "info": {
+    "displayName": "SEO"
+  },
+  "attributes": {
+    "metaTitle": {
+      "type": "text",
+      "required": true
+    },
+    "metaDescription": {
+      "type": "text",
+      "required": true
+    },
+    "metaImage": {
+      "type": "media",
+      "allowedTypes": ["images"],
+      "multiple": false
+    },
+    "keywords": {
+      "type": "text"
+    },
+    "canonicalURL": {
+      "type": "string"
+    },
+    "excludeFromSitemap": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "structuredData": {
+      "type": "json"
+    },
+    "metaSocial": {
+      "type": "component",
+      "component": "shared.meta-social",
+      "repeatable": true
+    }
+  }
+}

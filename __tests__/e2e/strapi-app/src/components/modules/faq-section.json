@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_modules_faq_sections",
+  "info": { "displayName": "FAQ Section" },
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "faqItems": {
+      "type": "component",
+      "component": "modules.faq-item",
+      "repeatable": true,
+      "required": true,
+      "min": 1
+    }
+  }
+}

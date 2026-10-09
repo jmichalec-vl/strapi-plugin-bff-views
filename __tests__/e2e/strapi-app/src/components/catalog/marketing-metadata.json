@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_catalog_marketing_metadata",
+  "info": {
+    "displayName": "Marketing Metadata"
+  },
+  "attributes": {
+    "isMarketingMetadata": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "skincare",
+        "haircare",
+        "supplements",
+        "consultation",
+        "lab_test",
+        "merchandise",
+        "gift_card"
+      ],
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_navigation_footer_sections",
+  "info": { "displayName": "Footer Section" },
+  "attributes": {
+    "sectionTitle": { "type": "string", "required": true },
+    "sectionLink": { "type": "string", "required": true },
+    "isContent": { "type": "boolean", "required": true },
+    "sectionContent": { "type": "richtext" },
+    "links": {
+      "type": "component",
+      "component": "navigation.link",
+      "repeatable": true
+    }
+  }
+}

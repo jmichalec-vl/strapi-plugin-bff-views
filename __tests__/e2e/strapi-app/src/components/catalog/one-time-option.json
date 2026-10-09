@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_catalog_one_time_options",
+  "info": {
+    "displayName": "One Time Option"
+  },
+  "attributes": {
+    "sku": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "fulfillmentMethod": {
+      "type": "enumeration",
+      "enum": ["shipped", "local pickup", "virtual"],
+      "required": true
+    },
+    "associatedVariants": {
+      "type": "component",
+      "component": "catalog.associated-variant",
+      "repeatable": true
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_navigation_dropdowns",
+  "info": { "displayName": "Dropdown" },
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "textColor": { "type": "string" },
+    "sections": {
+      "type": "component",
+      "component": "navigation.dropdown-section",
+      "repeatable": true
+    }
+  }
+}

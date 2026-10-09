@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_modules_content_blocks",
+  "info": {
+    "displayName": "Content Block"
+  },
+  "attributes": {
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "hasWideContent": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

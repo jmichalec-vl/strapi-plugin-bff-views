@@ -1,0 +1,15 @@
+{
+  "kind": "singleType",
+  "collectionName": "announcements",
+  "info": {
+    "singularName": "announcement",
+    "pluralName": "announcements",
+    "displayName": "Announcement"
+  },
+  "options": { "draftAndPublish": false },
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "text": { "type": "text" },
+    "isVisible": { "type": "boolean", "default": true }
+  }
+}

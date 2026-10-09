@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_modules_review_sections",
+  "info": { "displayName": "Review Section" },
+  "attributes": {
+    "isVisible": { "type": "boolean", "required": true, "default": true },
+    "title": { "type": "string", "required": true },
+    "background": {
+      "type": "media",
+      "allowedTypes": ["images"],
+      "multiple": false
+    },
+    "reviewType": {
+      "type": "enumeration",
+      "enum": ["company_reviews", "product_reviews"],
+      "default": "company_reviews"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product"
+    }
+  }
+}

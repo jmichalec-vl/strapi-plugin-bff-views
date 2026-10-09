@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_modules_product_grids",
+  "info": { "displayName": "Product Grid" },
+  "attributes": {
+    "title": { "type": "string" },
+    "description": { "type": "text" },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product"
+    },
+    "promoTiles": {
+      "type": "component",
+      "component": "modules.promo-tile",
+      "repeatable": true
+    }
+  }
+}

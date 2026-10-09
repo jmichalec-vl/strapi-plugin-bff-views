@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_catalog_subscription_options",
+  "info": {
+    "displayName": "Subscription Option"
+  },
+  "attributes": {
+    "sku": {
+      "type": "string",
+      "required": true
+    },
+    "recurringCost": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "fulfillmentMethod": {
+      "type": "enumeration",
+      "enum": ["shipped", "local pickup", "virtual"],
+      "required": true
+    },
+    "intervalDays": {
+      "type": "integer",
+      "required": true,
+      "default": 90,
+      "min": 1
+    },
+    "initialDelayDays": {
+      "type": "integer",
+      "required": true,
+      "default": 90,
+      "min": 0
+    },
+    "associatedVariants": {
+      "type": "component",
+      "component": "catalog.associated-variant",
+      "repeatable": true
+    }
+  }
+}

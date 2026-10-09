@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_navigation_icon_links",
+  "info": { "displayName": "Icon Link" },
+  "attributes": {
+    "iconImage": {
+      "type": "media",
+      "allowedTypes": ["images"],
+      "multiple": false,
+      "required": true
+    },
+    "url": { "type": "string", "required": true }
+  }
+}

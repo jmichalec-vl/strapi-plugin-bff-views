@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_modules_promo_tiles",
+  "info": { "displayName": "Promo Tile" },
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "link": { "type": "string", "required": true },
+    "image": {
+      "type": "media",
+      "allowedTypes": ["images"],
+      "multiple": false,
+      "required": true
+    }
+  }
+}

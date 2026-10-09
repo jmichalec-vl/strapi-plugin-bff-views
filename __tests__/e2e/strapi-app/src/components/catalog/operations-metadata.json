@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_catalog_operations_metadata",
+  "info": {
+    "displayName": "Operations Metadata"
+  },
+  "attributes": {
+    "isOperationsMetadata": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": ["skincare", "haircare", "supplements", "lab_test"],
+      "required": true
+    },
+    "internalCode": {
+      "type": "string",
+      "private": true
+    }
+  }
+}
