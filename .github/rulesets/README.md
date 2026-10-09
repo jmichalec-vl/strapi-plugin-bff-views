@@ -15,6 +15,9 @@ To update an existing ruleset, find its id with
 
 - `main-branch`: no deletion or force-push, linear history, pull requests with
   one approving review, all four CI jobs green on an up-to-date branch.
+  It deliberately has no `creation`/`update` (restrict updates) rules: those
+  block every write to the ref including pull-request merges, and the web
+  merge path does not apply the Admin bypass to them.
 - `release-tags`: `v*` tags cannot be created, moved or deleted by hand.
 
 ## Bypass actors
